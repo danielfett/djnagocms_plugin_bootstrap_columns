@@ -1,0 +1,8 @@
+{% load cms_tags %}
+<div class="container-fluid spaced {% for class in instance.classes %}{{class}} {% endfor %}" id="{{instance.element_id}}">
+    <div class="row">
+        {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+        {% endfor %}
+    </div>
+</div>
