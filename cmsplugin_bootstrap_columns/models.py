@@ -12,6 +12,11 @@ class BootstrapRow(CMSPlugin):
                                   help_text="""ID's to be applied to this
                                   element""", verbose_name="Element ID's")
 
+    element_style = models.CharField(max_length=255, null=True, blank=True,
+                                     help_text="""HTML styles to be applied to
+                                     this element""",
+                                     verbose_name="Element style")
+
     def __unicode__(self):
         return unicode(self.title)
 
@@ -56,6 +61,14 @@ class BootstrapColumn(CMSPlugin):
                                           choices=device_width_range,
                                           help_text="""The column width on
                                           large devices (1200px and over)""")
+    element_style = models.CharField(max_length=255, null=True, blank=True,
+                                     help_text="""HTML styles to be applied to
+                                     this element""",
+                                     verbose_name="Element style")
+    element_id = models.CharField(max_length=255, null=True, blank=True,
+                                  help_text="""ID's to be applied to this
+                                  element""", verbose_name="Element ID's")
+
     hide_on_mobile = models.BooleanField(help_text="""If selected, this
                                                  item will not display on
                                                  mobile devices (> 768px)""")

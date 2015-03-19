@@ -1,6 +1,6 @@
 {% load cms_tags %}
 
-<div class="{{instance.get_column_classes}}">
+<div class="{{instance.get_column_classes}}" id="{{instance.element_id}}" styles="{{instance.element_style}}">
     {% for plugin in instance.child_plugin_instances %}
         {% render_plugin plugin %}
     {% endfor %}
