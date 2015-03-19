@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/*
+media/*
+static/*
+src/*
+manage.py
+*.dp
+*.sqlite3
