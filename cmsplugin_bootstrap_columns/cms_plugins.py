@@ -31,8 +31,6 @@ class BootstrapColumnPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context['instance'] = instance
-        context['instance']['classes'] = context['instance']['classes'].split(" ")
-        print context['instance']['classes']
         context['placeholder'] = placeholder
         return context
 

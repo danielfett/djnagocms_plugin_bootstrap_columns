@@ -12,8 +12,11 @@ class BootstrapRow(CMSPlugin):
                                   help_text="""ID's to be applied to this
                                   element""", verbose_name="Element ID's")
 
-        def __unicode__(self):
-        return self.title
+    def __unicode__(self):
+        return unicode(self.title)
+
+    def __str__(self):
+        return unicode(self.title)
 
 
 class BootstrapColumn(CMSPlugin):
@@ -71,7 +74,10 @@ class BootstrapColumn(CMSPlugin):
     content = PlaceholderField('column_placeholder')
 
     def __unicode__(self):
-        return self.title
+        return unicode(self.title)
+
+    def __str__(self):
+        return unicode(self.title)
 
     @property
     def get_mobile_width(self):
