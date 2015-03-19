@@ -4,5 +4,5 @@ media/*
 static/*
 src/*
 manage.py
-*.dp
+*.db
 *.sqlite3
