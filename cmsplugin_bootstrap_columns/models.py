@@ -98,7 +98,10 @@ class BootstrapColumn(CMSPlugin):
     element_id = models.CharField(max_length=255, null=True, blank=True,
                                   help_text="""ID's to be applied to this
                                   element""", verbose_name="Element ID's")
-
+    element_class = models.CharField(max_length=255, null=True, blank=True,
+                                     help_text="""classes to be applied to this
+                                     element""", verbose_name="Element classes"
+                                     )
     hide_on_mobile = models.BooleanField(help_text="""If selected, this
                                                  item will not display on
                                                  mobile devices (> 768px)""")
@@ -116,61 +119,73 @@ class BootstrapColumn(CMSPlugin):
                                                   over)""")
     mobile_device_offset = models.CharField(max_length=255,
                                             choices=device_count_range,
+                                            blank=True,
                                             help_text="""The column offset on
                                             mobile devices (> 768px)""")
     small_device_offset = models.CharField(max_length=255,
                                            choices=device_count_range,
+                                           blank=True,
                                            help_text="""The column offset on
                                            small (tablet) devices (768px -
                                            992px)""")
 
     medium_device_offset = models.CharField(max_length=255,
                                             choices=device_count_range,
+                                            blank=True,
                                             help_text="""The column offset on
                                             medium (small screen
                                             computers/laptops) devices (992px -
                                             1200px) """)
     large_device_offset = models.CharField(max_length=255,
                                            choices=device_count_range,
+                                           blank=True,
                                            help_text="""The column offset on
                                            large devices (1200px and over)""")
     mobile_device_pull = models.CharField(max_length=255,
                                           choices=device_count_range,
+                                          blank=True,
                                           help_text="""The column pull on
                                           mobile devices (> 768px)""")
     small_device_pull = models.CharField(max_length=255,
                                          choices=device_count_range,
+                                         blank=True,
                                          help_text="""The column pull on
                                          small (tablet) devices (768px - 992px
                                          )""")
     medium_device_pull = models.CharField(max_length=255,
                                           choices=device_count_range,
+                                          blank=True,
                                           help_text="""The column pull on
                                           medium (small screen
                                           computers/laptops) devices (992px -
                                           1200px) """)
     large_device_pull = models.CharField(max_length=255,
                                          choices=device_count_range,
+                                         blank=True,
                                          help_text="""The column pull on
                                          large devices (1200px and over)""")
 
     mobile_device_push = models.CharField(max_length=255,
                                           choices=device_count_range,
+                                          blank=True,
                                           help_text="""The column push on
                                           mobile devices (> 768px)""")
     small_device_push = models.CharField(max_length=255,
                                          choices=device_count_range,
+                                         blank=True,
                                          help_text="""The column push on
                                          small (tablet) devices (768px - 992px
                                          )""")
     medium_device_push = models.CharField(max_length=255,
                                           choices=device_count_range,
+                                          blank=True,
                                           help_text="""The column push on
                                           medium (small screen
                                           computers/laptops) devices (992px -
                                           1200px) """)
     large_device_push = models.CharField(max_length=255,
                                          choices=device_count_range,
+                                         blank=True,
                                          help_text="""The column push on
                                          large devices (1200px and over)""")
 
@@ -297,7 +312,7 @@ class BootstrapColumn(CMSPlugin):
                                 self.get_large_pull)
 
     @property
-    def get_column_pushs(self):
+    def get_column_pushes(self):
         return "%s %s %s %s" % (self.get_mobile_push,
                                 self.get_small_push,
                                 self.get_medium_push,
@@ -312,7 +327,8 @@ class BootstrapColumn(CMSPlugin):
 
     @property
     def get_column_classes(self):
-        return "%s %s %s %s %s %s %s %s" % (self.is_hidden_on_mobile,
-                                            self.is_hidden_on_small,
-                                            self.is_hidden_on_medium,
-                                            self.is_hidden_on_large)
+        return "%s %s %s %s %s" % (self.get_column_widths,
+                                   self.get_column_pulls,
+                                   self.get_column_pushes,
+                                   self.get_column_offsets,
+                                   self.element_class)
