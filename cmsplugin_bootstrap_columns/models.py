@@ -55,7 +55,7 @@ class BootstrapRow(CMSPlugin):
 
 
 class BootstrapColumn(CMSPlugin):
-    device_width_range = (
+    device_count_range = (
         ('0', 'Not Set',),
         ('1', '1/12',),
         ('2', '2/12',),
@@ -73,22 +73,22 @@ class BootstrapColumn(CMSPlugin):
 
     title = models.CharField(max_length=255)
     mobile_device_width = models.CharField(max_length=255,
-                                           choices=device_width_range,
+                                           choices=device_count_range,
                                            help_text="""The column width on
                                            mobile devices (> 768px)""")
     small_device_width = models.CharField(max_length=255,
-                                          choices=device_width_range,
+                                          choices=device_count_range,
                                           help_text="""The column width on
                                           small (tablet) devices (768px - 992px
                                           )""")
     medium_device_width = models.CharField(max_length=255,
-                                           choices=device_width_range,
+                                           choices=device_count_range,
                                            help_text="""The column width on
                                            medium (small screen
                                            computers/laptops) devices (992px -
                                            1200px) """)
     large_device_width = models.CharField(max_length=255,
-                                          choices=device_width_range,
+                                          choices=device_count_range,
                                           help_text="""The column width on
                                           large devices (1200px and over)""")
     element_style = models.CharField(max_length=255, null=True, blank=True,
@@ -114,6 +114,66 @@ class BootstrapColumn(CMSPlugin):
                                                   this item will not display
                                                   on large devices (1200px and
                                                   over)""")
+    mobile_device_offset = models.CharField(max_length=255,
+                                            choices=device_count_range,
+                                            help_text="""The column offset on
+                                            mobile devices (> 768px)""")
+    small_device_offset = models.CharField(max_length=255,
+                                           choices=device_count_range,
+                                           help_text="""The column offset on
+                                           small (tablet) devices (768px -
+                                           992px)""")
+
+    medium_device_offset = models.CharField(max_length=255,
+                                            choices=device_count_range,
+                                            help_text="""The column offset on
+                                            medium (small screen
+                                            computers/laptops) devices (992px -
+                                            1200px) """)
+    large_device_offset = models.CharField(max_length=255,
+                                           choices=device_count_range,
+                                           help_text="""The column offset on
+                                           large devices (1200px and over)""")
+    mobile_device_pull = models.CharField(max_length=255,
+                                          choices=device_count_range,
+                                          help_text="""The column pull on
+                                          mobile devices (> 768px)""")
+    small_device_pull = models.CharField(max_length=255,
+                                         choices=device_count_range,
+                                         help_text="""The column pull on
+                                         small (tablet) devices (768px - 992px
+                                         )""")
+    medium_device_pull = models.CharField(max_length=255,
+                                          choices=device_count_range,
+                                          help_text="""The column pull on
+                                          medium (small screen
+                                          computers/laptops) devices (992px -
+                                          1200px) """)
+    large_device_pull = models.CharField(max_length=255,
+                                         choices=device_count_range,
+                                         help_text="""The column pull on
+                                         large devices (1200px and over)""")
+
+    mobile_device_push = models.CharField(max_length=255,
+                                          choices=device_count_range,
+                                          help_text="""The column push on
+                                          mobile devices (> 768px)""")
+    small_device_push = models.CharField(max_length=255,
+                                         choices=device_count_range,
+                                         help_text="""The column push on
+                                         small (tablet) devices (768px - 992px
+                                         )""")
+    medium_device_push = models.CharField(max_length=255,
+                                          choices=device_count_range,
+                                          help_text="""The column push on
+                                          medium (small screen
+                                          computers/laptops) devices (992px -
+                                          1200px) """)
+    large_device_push = models.CharField(max_length=255,
+                                         choices=device_count_range,
+                                         help_text="""The column push on
+                                         large devices (1200px and over)""")
+
     content = PlaceholderField('column_placeholder')
 
     def __unicode__(self):
@@ -143,32 +203,116 @@ class BootstrapColumn(CMSPlugin):
             return "col-lg-%s" % self.large_device_width
 
     @property
+    def get_mobile_offset(self):
+        if self.mobile_device_offset != 0:
+            return "col-xs-offset-%s" % self.mobile_device_offset
+
+    @property
+    def get_small_offset(self):
+        if self.small_device_offset != 0:
+            return "col-sm-offset-%s" % self.small_device_offset
+
+    @property
+    def get_medium_offset(self):
+        if self.medium_device_offset != 0:
+            return "col-md-offset-%s" % self.medium_device_offset
+
+    @property
+    def get_large_offset(self):
+        if self.large_device_offset != 0:
+            return "col-lg-offset-%s" % self.large_device_offset
+
+    @property
+    def get_mobile_pull(self):
+        if self.mobile_device_pull != 0:
+            return "col-xs-pull-%s" % self.mobile_device_pull
+
+    @property
+    def get_small_pull(self):
+        if self.small_device_pull != 0:
+            return "col-sm-pull-%s" % self.small_device_pull
+
+    @property
+    def get_medium_pull(self):
+        if self.medium_device_pull != 0:
+            return "col-md-pull-%s" % self.medium_device_pull
+
+    @property
+    def get_large_pull(self):
+        if self.large_device_pull != 0:
+            return "col-lg-pull-%s" % self.large_device_pull
+
+    @property
+    def get_mobile_push(self):
+        if self.mobile_device_push != 0:
+            return "col-xs-push-%s" % self.mobile_device_push
+
+    @property
+    def get_small_push(self):
+        if self.small_device_push != 0:
+            return "col-sm-push-%s" % self.small_device_push
+
+    @property
+    def get_medium_push(self):
+        if self.medium_device_push != 0:
+            return "col-md-push-%s" % self.medium_device_push
+
+    @property
+    def get_large_push(self):
+        if self.large_device_push != 0:
+            return "col-lg-push-%s" % self.large_device_push
+
+    @property
     def is_hidden_on_mobile(self):
         if self.hide_on_mobile:
             return "hidden-xs"
 
     @property
     def is_hidden_on_small(self):
-        if self.hide_on_mobile:
+        if self.hide_on_small:
             return "hidden-sm"
 
     @property
     def is_hidden_on_medium(self):
-        if self.hide_on_mobile:
+        if self.hide_on_medium:
             return "hidden-md"
 
     @property
     def is_hidden_on_large(self):
-        if self.hide_on_mobile:
+        if self.hide_on_large:
             return "hidden-lg"
 
     @property
+    def get_column_widths(self):
+        return "%s %s %s %s" % (self.get_mobile_width,
+                                self.get_small_width,
+                                self.get_medium_width,
+                                self.get_large_width)
+
+    @property
+    def get_column_pulls(self):
+        return "%s %s %s %s" % (self.get_mobile_pull,
+                                self.get_small_pull,
+                                self.get_medium_pull,
+                                self.get_large_pull)
+
+    @property
+    def get_column_pushs(self):
+        return "%s %s %s %s" % (self.get_mobile_push,
+                                self.get_small_push,
+                                self.get_medium_push,
+                                self.get_large_push)
+
+    @property
+    def get_column_offsets(self):
+        return "%s %s %s %s" % (self.get_mobile_offset,
+                                self.get_small_offset,
+                                self.get_medium_offset,
+                                self.get_large_offset)
+
+    @property
     def get_column_classes(self):
-        return "%s %s %s %s %s %s %s %s" % (self.get_mobile_width,
-                                            self.get_small_width,
-                                            self.get_medium_width,
-                                            self.get_large_width,
-                                            self.is_hidden_on_mobile,
+        return "%s %s %s %s %s %s %s %s" % (self.is_hidden_on_mobile,
                                             self.is_hidden_on_small,
                                             self.is_hidden_on_medium,
                                             self.is_hidden_on_large)

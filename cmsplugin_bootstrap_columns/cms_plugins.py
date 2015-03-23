@@ -43,7 +43,7 @@ class BootstrapColumnPlugin(CMSPluginBase):
     name = "Bootstrap Column"
     render_template = "cmsplugin_bootstrap_columns/column.html"
     require_parent = True
-    parent_classes = ['BootstrapRowPlugin']
+    parent_classes = ['BootstrapRowPlugin', 'BootStrapColumnPlugin']
 
     def render(self, context, instance, placeholder):
         context['instance'] = instance
