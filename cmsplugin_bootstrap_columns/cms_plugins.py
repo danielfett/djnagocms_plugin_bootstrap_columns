@@ -1,8 +1,24 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
+from .models import BootStrapContainer
 from .models import BootstrapRow
 from .models import BootstrapColumn
+
+
+class BootStrapContainerPlugin(CMSPluginBase):
+    allow_children = True
+    child_classes = ['BootstrapRowPlugin']
+    model = BootStrapContainer
+    module = "Bootstrap"
+    name = "Bootstrap Container"
+    render_template = "cmsplugin_bootstrap_columns/container.html"
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        return context
+
+plugin_pool.register_plugin(BootStrapContainerPlugin)
 
 
 class BootstrapRowPlugin(CMSPluginBase):

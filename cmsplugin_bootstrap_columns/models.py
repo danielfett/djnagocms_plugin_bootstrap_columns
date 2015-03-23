@@ -3,6 +3,36 @@ from cms.models.fields import PlaceholderField
 from django.db import models
 
 
+class BootStrapContainer(CMSPlugin):
+    title = models.CharField(max_length=255)
+    classes = models.CharField(max_length=255, null=True, blank=True,
+                               help_text="""Classes to be applied to this
+                               element""", verbose_name="Element Classes")
+    element_id = models.CharField(max_length=255, null=True, blank=True,
+                                  help_text="""ID's to be applied to this
+                                  element""", verbose_name="Element ID's")
+
+    element_style = models.CharField(max_length=255, null=True, blank=True,
+                                     help_text="""HTML styles to be applied to
+                                     this element""",
+                                     verbose_name="Element style")
+    is_fluid = models.BooleanField(default=True)
+
+    def __unicode__(self):
+        return unicode(self.title)
+
+    def __str__(self):
+        return unicode(self.title)
+
+    @property
+    def get_is_fluid(self):
+        print self.is_fluid
+        if self.is_fluid is True:
+            return "container-fluid"
+        else:
+            return "container"
+
+
 class BootstrapRow(CMSPlugin):
     title = models.CharField(max_length=255)
     classes = models.CharField(max_length=255, null=True, blank=True,

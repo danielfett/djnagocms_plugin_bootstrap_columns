@@ -1,6 +1,6 @@
 {% load cms_tags %}
 
-<div class="row {{instance.classes}}" id="{{instance.element_id}}" styles="{{instance.element_style}}">
+<div class="{{instance.get_is_fluid}} {{instance.classes}}" id="{{instance.element_id}}" styles="{{instance.element_style}}">
     {% for plugin in instance.child_plugin_instances %}
         {% render_plugin plugin %}
     {% endfor %}
