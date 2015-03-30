@@ -6,3 +6,4 @@ src/*
 manage.py
 *.db
 *.sqlite3
+*.egg-info
