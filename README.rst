@@ -5,6 +5,7 @@ and aims to provide the Twitter Bootstrap [http://getbootstrap] grid system for
 Django CMS.
 
 Currently this package provides three plugins:
+
 - Bootstrap Container
 - Bootstrap Row
 - Bootstrap Column
@@ -13,6 +14,7 @@ Bootstrap Container
 -------------------
 This plugin generates a basic div to act as the bootstrap container. The
 container provides the following options:
+
 - Title - Just a name for the plugin
 - Classes - allows additional classes to be added
 - Element ID - allows users to add id attributes
@@ -25,6 +27,7 @@ Bootstrap Row
 -------------
 This plugin generates a div that acts as a bootstrap row. The row provides the
 following options:
+
 - Title - Just a name for the plugin
 - Classes - allows additional classes to be added
 - Element ID - allows users to add id attributes
@@ -36,6 +39,7 @@ Bootstrap Column
 ----------------
 This pluging enerates a div that acts as bootstrap column (col-). The column
 provides the following options:
+
 - Title - Just a name for the plugin
 - Classes - allows additional classes to be added
 - Element ID - allows users to add id attributes
