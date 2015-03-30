@@ -1,2 +1,0 @@
-src
-cmsplugin_bootstrap_columns
