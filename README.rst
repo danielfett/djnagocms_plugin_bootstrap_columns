@@ -1,4 +1,3 @@
-============================
 Django CMS Bootstrap Columns
 ============================
 Django CMS Bootstrap Columns is a plugin for Django CMS [http://djangocms.org]
@@ -10,9 +9,8 @@ Currently this package provides three plugins:
 * Bootstrap Row
 * Bootstrap Column
 
-===================
 Bootstrap Container 
-===================
+-------------------
 This plugin generates a basic div to act as the bootstrap container. The
 container provides the following options:
 * Title - Just a name for the plugin
@@ -23,9 +21,8 @@ container provides the following options:
 This plugin can be put inside any other plugin (allows any parent), but can
 only have Bootstrap Row Plugins placed inside of it (as child plugins).
 
-=============
 Bootstrap Row
-=============
+-------------
 This plugin generates a div that acts as a bootstrap row. The row provides the
 following options:
 * Title - Just a name for the plugin
@@ -35,9 +32,8 @@ following options:
 This plugin can be put inside any other plugin (allows any parent), but can
 only have Bootstrap Column Plugins placed inside of it (as child plugins).
 
-================
 Bootstrap Column
-================
+----------------
 This pluging enerates a div that acts as bootstrap column (col-). The column
 provides the following options:
 * Title - Just a name for the plugin
