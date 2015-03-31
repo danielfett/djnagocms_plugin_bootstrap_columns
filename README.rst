@@ -52,3 +52,8 @@ provides the following options:
 - Mobile/Small/Medium/Large Offset - Sets bootstarp offset values
 - Mobile/Small/Medium/Large Pull - Sets bootstarp pull values
 - Mobile/Small/Medium/Large Push - Sets bootstarp push values
+
+Documentation
+-------------
+Documentation is available through `readthedocs here
+<http://djnagocms-plugin-bootstrap-columns.readthedocs.org/en/latest/index.html>`_.
