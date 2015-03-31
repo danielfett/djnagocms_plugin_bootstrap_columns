@@ -20,9 +20,8 @@ import shlex
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('../..'))
-sys.path.insert(0, '/Users/jlspencergarlitz/Sites/cmsplugin-twitter-bootstrap/venv/lib/python2.7/site-packages/')
-from django.conf import settings
-settings.configure()
+#from django.conf import settings
+#settings.configure()
 
 # -- General configuration ------------------------------------------------
 
