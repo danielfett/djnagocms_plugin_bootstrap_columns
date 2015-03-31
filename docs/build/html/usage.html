@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Usage &mdash; DjangoCMS Twitter Bootstrap Columns Plugin 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DjangoCMS Twitter Bootstrap Columns Plugin 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">DjangoCMS Twitter Bootstrap Columns Plugin 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>DjagnoCMS Bootstrap Columns main purpose is to provide a quick and easy way to
+create dynamic layouts using Twitter Bootstrap. The project provides the
+following plugins:</p>
+<ul class="simple">
+<li>Bootstrap Container</li>
+<li>Bootstrap Row</li>
+<li>Bootstrap Columns</li>
+</ul>
+<p>If you are familar with Twitter Bootstrap these three plugins line up perfectly
+with .container (.container-fluid), .row, and .col-<a href="#id1"><span class="problematic" id="id2">*</span></a>. If you are unfamilar with
+Twitter Bootstrap read the documenation <a class="reference external" href="http://getbootstrap.com">here</a>.</p>
+<p>Each plugin is very flexible allowing users to add multiple extra classes,
+attributes, and styles.</p>
+<div class="section" id="bootstrap-container">
+<h2>Bootstrap Container<a class="headerlink" href="#bootstrap-container" title="Permalink to this headline">¶</a></h2>
+<p>Bootstrap Container can be placed directly inside of Placeholder objects.
+Additionally this plugin has the following options:</p>
+<ul class="simple">
+<li><strong>Title</strong> - The name that shows in for plugin rendering.</li>
+<li><strong>Classes</strong> - Additionally CSS classes can be added in this box to render the
+element.</li>
+<li><strong>Element ID&#8217;s</strong> - Additional Elemnt ID&#8217;s (&lt;div id=&#8221;...&#8221;) to be rendered with
+this plugin</li>
+<li><strong>Element Style</strong> = Additional HTML styles to be rendered with this plugin
+(&lt;div style=&#8221;...&#8221;).</li>
+<li><strong>Is Fluid</strong> - Toggles the container class between .container and
+.container-fluid</li>
+</ul>
+</div>
+<div class="section" id="bootstrap-row">
+<h2>Bootstrap Row<a class="headerlink" href="#bootstrap-row" title="Permalink to this headline">¶</a></h2>
+<p>Bootstrap Row can be placed directly inside of a Placeholder object or inside
+of Bootstrap Container plugins. Bootstrap Row also has the following options:</p>
+<ul class="simple">
+<li><strong>Title</strong> - The name that shows in for plugin rendering.</li>
+<li><strong>Classes</strong> - Additionally CSS classes can be added in this box to render the
+element.</li>
+<li><strong>Element ID&#8217;s</strong> - Additional Elemnt ID&#8217;s (&lt;div id=&#8221;...&#8221;) to be rendered with
+this plugin</li>
+<li><strong>Element Style</strong> = Additional HTML styles to be rendered with this plugin
+(&lt;div style=&#8221;...&#8221;).</li>
+</ul>
+</div>
+<div class="section" id="bootstrap-column">
+<h2>Bootstrap Column<a class="headerlink" href="#bootstrap-column" title="Permalink to this headline">¶</a></h2>
+<p>Bootstrap Column can only be placed inside of Bootstrap Container plugins.
+Bootstrap Column also has the following options:</p>
+<ul class="simple">
+<li><strong>Title</strong> - The name that shows in for plugin rendering.</li>
+<li><strong>Mobile/Small/Medium/Large</strong> Device Width - These options corrispond with
+col-xs/sm/md/lg-* in Twitter Bootstrap. These options provide a 0-12 option
+that renders into the sizing for the column.</li>
+<li><strong>Classes</strong> - Additionally CSS classes can be added in this box to render the
+element.</li>
+<li><strong>Element ID&#8217;s</strong> - Additional Elemnt ID&#8217;s (&lt;div id=&#8221;...&#8221;) to be rendered with
+this plugin</li>
+<li><strong>Element Style</strong> = Additional HTML styles to be rendered with this plugin
+(&lt;div style=&#8221;...&#8221;).</li>
+<li><strong>Hide on Mobile</strong> - Hides the element on devices with a resolution less
+than 768px.</li>
+<li><strong>Hide on Small</strong> - Hides the element on devices with a resolution
+between 768px - 992px</li>
+<li><strong>Hide on Medium</strong> - Hides the element on devices with a resolution
+between 992px - 1200px</li>
+<li><strong>Hide on Large</strong> - Hides the element on devices with a resolution larger
+than 1200px.</li>
+<li><strong>Mobile/Small/Medium/Large Device Offset</strong> - Applies offset-xs/sm/md/lg-* to the
+rendered element.</li>
+<li><strong>Mobile/Small/Medium/Large Device Pull</strong> - Applies pull-xs/ms/md/lg-* to the
+rendered element.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Usage</a><ul>
+<li><a class="reference internal" href="#bootstrap-container">Bootstrap Container</a></li>
+<li><a class="reference internal" href="#bootstrap-row">Bootstrap Row</a></li>
+<li><a class="reference internal" href="#bootstrap-column">Bootstrap Column</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/usage.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Jeremy Spencer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      
+      |
+      <a href="_sources/usage.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+  </body>
+</html>
