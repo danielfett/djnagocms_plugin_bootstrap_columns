@@ -21,7 +21,7 @@ setup(
     name='djangocms-bootstrap-columns',
     version=cmsplugin_bootstrap_columns.__version__,
     description='Adds three plugins (container, row, columns) for Twitter Bootstrap',
-    long_description=open(os.path.join(os.path.dirname(__file__), 'README.md')).read(),
+    long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     url='https://github.com/jtiki/djnagocms_plugin_bootstrap_columns',
     license='BSD License',
     platforms=['OS Independent'],
